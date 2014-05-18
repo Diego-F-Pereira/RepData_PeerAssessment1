@@ -183,15 +183,26 @@ hljs.initHighlightingOnLoad();
 
 <hr/>
 
-<p><strong>Course :</strong>Reproducible Research.</p>
+<p><strong>Course :</strong></p>
 
-<p><strong>Dataset :</strong>Activity monitoring data.</p>
+<p>Reproducible Research.</p>
 
-<p><strong>Description :</strong>This assignment makes use of data from a personal activity              monitoring device. This device collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.</p>
+<p><strong>Dataset :</strong></p>
 
-<p><strong>Objective :</strong>You will need to write a report that answers the questions detailed below. Ultimately, you will need to complete the entire assignment in a single R markdown document that can be processed by knitr and be transformed into an HTML file.</p>
+<p>Activity monitoring data.</p>
 
-<p><strong>Instructions :</strong>Throughout your report make sure you always include the code that you used to generate the output you present. When writing code chunks in the R markdown document, always use echo = TRUE so that someone else will be able to read the code.</p>
+<p><strong>Description :</strong></p>
+
+<p>This assignment makes use of data from a personal activity monitoring device. This device collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual
+collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.</p>
+
+<p><strong>Objective :</strong></p>
+
+<p>You will need to write a report that answers the questions detailed below. Ultimately, you will need to complete the entire assignment in a single R markdown document that can be processed by knitr and be transformed into an HTML file.</p>
+
+<p><strong>Instructions :</strong></p>
+
+<p>Throughout your report make sure you always include the code that you used to generate the output you present. When writing code chunks in the R markdown document, always use echo = TRUE so that someone else will be able to read the code.</p>
 
 <p>This assignment will be evaluated via peer assessment so it is essential that your peer evaluators be able to review the code for your analysis.
 For the plotting aspects of this assignment, feel free to use any plotting system in R (i.e., base, lattice, ggplot2).</p>
@@ -200,7 +211,9 @@ For the plotting aspects of this assignment, feel free to use any plotting syste
 
 <p>The assignment submission will consist of the URL to your GitHub repository and the SHA-1 commit ID for your repository state.</p>
 
-<p><strong>Data Url :</strong> <a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip">https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip</a></p>
+<p><strong>Data Url :</strong> </p>
+
+<p><a href="https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip">https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip</a></p>
 
 <hr/>
 
@@ -222,8 +235,8 @@ gc()
 </code></pre>
 
 <pre><code>##          used (Mb) gc trigger (Mb) max used (Mb)
-## Ncells 242171 13.0     407500 21.8   350000 18.7
-## Vcells 450218  3.5     905753  7.0   859051  6.6
+## Ncells 242188 13.0     407500 21.8   350000 18.7
+## Vcells 450483  3.5     905753  7.0   859051  6.6
 </code></pre>
 
 <pre><code class="r">my.path &lt;- &quot;C:/Users/Diego/Documents/GitHub/Reproducible Research/RepData_PeerAssessment1&quot;
@@ -387,8 +400,17 @@ sapply(activity, class)
 
 <hr/>
 
-<p>What is mean total number of steps taken per day?
-For this part of the assignment, you can ignore the missing values in the 
+<p>What is mean total number of steps taken per day?</p>
+
+<hr/>
+
+<p><strong>Answer</strong></p>
+
+<p>10766</p>
+
+<hr/>
+
+<p>For this part of the assignment, you can ignore the missing values in the 
 dataset.</p>
 
 <hr/>
@@ -428,8 +450,17 @@ mean.median[1, 3]
 
 <hr/>
 
-<p>What is the average daily activity pattern?
-Make a time series plot (i.e. type = &ldquo;l&rdquo;) 
+<p>What is the average daily activity pattern?</p>
+
+<hr/>
+
+<p><strong>Answer</strong></p>
+
+<p>10765</p>
+
+<hr/>
+
+<p>Make a time series plot (i.e. type = &ldquo;l&rdquo;) 
 (x-axis) = 5-minute interval 
 (y-axis) = average number of steps taken, averaged across all days </p>
 
@@ -453,6 +484,14 @@ contains the maximum number of steps?</p>
 
 <hr/>
 
+<p><strong>Answer</strong></p>
+
+<p>835</p>
+
+<hr/>
+
+<hr/>
+
 <pre><code class="r"># Max average steps per interval ------------------------------------------
 steps.perinterval[which.max(steps.perinterval$steps), ]$interval
 </code></pre>
@@ -470,7 +509,15 @@ The presence of missing days may introduce bias into some calculations or
 summaries of the data.</p>
 
 <p>Calculate and report the total number of missing values in the dataset 
-(i.e. the total number of rows with NAs). </p>
+(i.e. the total number of rows with NAs).:</p>
+
+<hr/>
+
+<p><strong>Answer</strong></p>
+
+<p>2304</p>
+
+<hr/>
 
 <hr/>
 
@@ -535,6 +582,19 @@ activity.imp$steps &lt;- ifelse(is.na(activity.imp$steps), round(replace(activit
 <p>Make a histogram of the total number of steps taken each day and 
 Calculate and report the mean and median total number of steps taken per 
 day. </p>
+
+<p><strong>Note that all the following results use the data frame steps.perday.imp,
+which contains the imputed data.</strong></p>
+
+<hr/>
+
+<hr/>
+
+<p><strong>Answer</strong></p>
+
+<p><strong>Mean:</strong> 10766</p>
+
+<p><strong>Median:</strong> 10762</p>
 
 <hr/>
 

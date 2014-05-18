@@ -1,15 +1,26 @@
 PA-1
 ========================================================
  ------------------------------------------------------------------------
-**Course :**Reproducible Research.
+**Course :**
 
-**Dataset :**Activity monitoring data.
+Reproducible Research.
 
-**Description :**This assignment makes use of data from a personal activity              monitoring device. This device collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.
+**Dataset :**
 
-**Objective :**You will need to write a report that answers the questions detailed below. Ultimately, you will need to complete the entire assignment in a single R markdown document that can be processed by knitr and be transformed into an HTML file.
+Activity monitoring data.
 
-**Instructions :**Throughout your report make sure you always include the code that you used to generate the output you present. When writing code chunks in the R markdown document, always use echo = TRUE so that someone else will be able to read the code.
+**Description :**
+
+This assignment makes use of data from a personal activity monitoring device. This device collects data at 5 minute intervals through out the day. The data consists of two months of data from an anonymous individual
+collected during the months of October and November, 2012 and include the number of steps taken in 5 minute intervals each day.
+
+**Objective :**
+
+You will need to write a report that answers the questions detailed below. Ultimately, you will need to complete the entire assignment in a single R markdown document that can be processed by knitr and be transformed into an HTML file.
+
+**Instructions :**
+
+Throughout your report make sure you always include the code that you used to generate the output you present. When writing code chunks in the R markdown document, always use echo = TRUE so that someone else will be able to read the code.
 
 This assignment will be evaluated via peer assessment so it is essential that your peer evaluators be able to review the code for your analysis.
 For the plotting aspects of this assignment, feel free to use any plotting system in R (i.e., base, lattice, ggplot2).
@@ -18,7 +29,9 @@ Fork/clone the GitHub repository created for this assignment. You will submit th
 
 The assignment submission will consist of the URL to your GitHub repository and the SHA-1 commit ID for your repository state.
 
-**Data Url :** https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip
+**Data Url :** 
+
+https://d396qusza40orc.cloudfront.net/repdata%2Fdata%2Factivity.zip
  ------------------------------------------------------------------------
 
 **Variables:**
@@ -140,6 +153,11 @@ sapply(activity, class);
 ```
  ------------------------------------------------------------------------
 What is mean total number of steps taken per day?
+ ------------------------------------------------------------------------
+ **Answer**
+ 
+ 10766
+ ------------------------------------------------------------------------
 For this part of the assignment, you can ignore the missing values in the 
 dataset.
  ------------------------------------------------------------------------
@@ -174,6 +192,11 @@ mean.median[1,3];
 ```
  ------------------------------------------------------------------------
 What is the average daily activity pattern?
+ ------------------------------------------------------------------------
+ **Answer**
+ 
+ 10765
+ ------------------------------------------------------------------------
 Make a time series plot (i.e. type = "l") 
 (x-axis) = 5-minute interval 
 (y-axis) = average number of steps taken, averaged across all days 
@@ -193,6 +216,11 @@ plot(steps.perinterval,type = "l");
 Which 5-minute interval, on average across all the days in the dataset, 
 contains the maximum number of steps?
  ------------------------------------------------------------------------
+ **Answer**
+ 
+ 835
+ ------------------------------------------------------------------------
+ ------------------------------------------------------------------------
 ```{r}
 # Max average steps per interval ------------------------------------------
 steps.perinterval[which.max(steps.perinterval$steps), ]$interval;
@@ -206,7 +234,12 @@ The presence of missing days may introduce bias into some calculations or
 summaries of the data.
 
 Calculate and report the total number of missing values in the dataset 
-(i.e. the total number of rows with NAs). 
+(i.e. the total number of rows with NAs).:
+ ------------------------------------------------------------------------
+ **Answer**
+ 
+ 2304
+ ------------------------------------------------------------------------
  ------------------------------------------------------------------------
 ```{r}
 # Calculate the number of rows with NA's ----------------------------------
@@ -260,6 +293,16 @@ activity.imp$steps <-
 Make a histogram of the total number of steps taken each day and 
 Calculate and report the mean and median total number of steps taken per 
 day. 
+
+**Note that all the following results use the data frame steps.perday.imp,
+which contains the imputed data.**
+ ------------------------------------------------------------------------
+  ------------------------------------------------------------------------
+ **Answer**
+ 
+ **Mean:** 10766
+ 
+ **Median:** 10762
  ------------------------------------------------------------------------
 ```{r}
 # Calculate the sum of steps per day --------------------------------------
